@@ -1,24 +1,19 @@
 <?php
+
 session_start();
 
-// if (!isset($_SESSION['codeEmp']) And ($_SERVER['PHP_SELF'] != "/connexionEmp.php") ){
-//     header("Location: connexionEmp.php");
-//     exit();
-// }
+if (!isset($_SESSION['codeEmp'])){
+   header("Location: connexionEmp.php");
+   exit();
+}
 
-$nom_employe = $_SESSION['nom'];
-$fonction_employe = $_SESSION['fonction'];
+if (isset($_SESSION['nom']) && isset($_SESSION['fonction'])) {
+    $nom_employe = $_SESSION['nom'];
+    $fonction_employe = $_SESSION['fonction'];
+}
 
 ?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <title><?php echo $title ?></title>
-</head>
-<body>
+
     <!-- component -->
 <nav class="bg-white shadow dark:bg-gray-800">
     <div class="container flex items-center justify-center p-6 mx-auto text-gray-600 capitalize dark:text-gray-300">
@@ -45,11 +40,8 @@ $fonction_employe = $_SESSION['fonction'];
             </h2>
             <!-- Component ends here -->
             <div class="text-center">
-                <h3 class="text-xl font-bold"><?php echo ($nom_employe); ?></h3>
-                <h4 class="text-sm text-blue-800"><?php echo ($fonction_employe); ?></h4>
+                <h3 class="text-xl font-bold"><?php if(isset($_SESSION['nom'])) {echo ($nom_employe);} ?></h3>
+                <h4 class="text-sm text-blue-800"><?php if(isset($_SESSION['fonction'])) {echo ($fonction_employe);} ?></h4>
             </div>
         </div>
 </div>
-
-</body>
-</html>

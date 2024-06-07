@@ -1,12 +1,6 @@
 <?php
-    require ('database.php');
     $title = "Page d'inscription";
     require 'masterPage.php';
-
-    // if (!isset($_SESSION['codeEmp']) && ($_SERVER['PHP_SELF'] != "/connexionEmp.php") ){
-    //     header("Location: connexionEmp.php");
-    //     exit();
-    // }
     require 'listeDeroulante.php'
 ?>
 

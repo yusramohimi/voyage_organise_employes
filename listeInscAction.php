@@ -1,9 +1,9 @@
 <?php
 
-// if (!isset($_SESSION['codeEmp']) && ($_SERVER['PHP_SELF'] != "/connexionEmp.php") ){
-//     header("Location: connexionEmp.php");
-//     exit();
-// }
+if (!isset($_SESSION['codeEmp'])) {
+    header("Location: connexionEmp.php");
+    exit();
+}
 require 'database.php';
 
 

@@ -1,8 +1,8 @@
 <?php 
 session_start();
-require 'database.php';
+
 if ($_SERVER['REQUEST_METHOD'] == 'POST'){
-    
+    require 'database.php';
     $statement = $pdo ->prepare('SELECT * FROM employe WHERE user= :user AND pwd = :pwd');
     $statement -> execute([
         ':user' => $_POST['user'],

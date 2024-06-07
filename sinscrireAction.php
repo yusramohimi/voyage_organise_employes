@@ -1,9 +1,5 @@
 <?php
 session_start(); 
-// if (!isset($_SESSION['codeEmp']) && ($_SERVER['PHP_SELF'] != "/connexionEmp.php") ){
-//     header("Location: connexionEmp.php");
-//     exit();
-// }
 require 'database.php';
 
 if($_SERVER['REQUEST_METHOD'] == 'POST'){
